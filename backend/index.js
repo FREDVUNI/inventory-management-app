@@ -3,6 +3,7 @@ const dotenv = require("dotenv")
 const morgan = require("morgan")
 const cors = require("cors")
 const connectDB = require('./database/connect')
+const errorHandler = require("./middleware/errorsMiddleware")
 const app = express()
 
 app.use(morgan("tiny"))
@@ -15,7 +16,9 @@ app.use("/api/users/",require("./routes/userRoutes"))
 
 const PORT = process.env.PORT || 9000
 
+app.use(errorHandler)
 connectDB()
+
 app.listen(PORT,() =>{
     console.log(`server started on http://localhost/${PORT}`)
 })
