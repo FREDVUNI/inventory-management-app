@@ -155,7 +155,32 @@ const loggedIn = async(req,res) =>{
 
 const updateProfile = async(req,res) =>{
     try{
+        const user = await User.findById(req.user._id)
 
+        if(user){
+            const { name,email,bio,photo,phone } = user
+            user.email = email,
+            user.name = req.body.name || name;
+            user.photo = req.body.photo || photo;
+            user.phone = req.body.phone || phone;
+            user.bio = req.body.bio || bio;
+
+            const update_user = await user.save()
+
+            const updated = jwt.sign({
+                _id:update_user._id,
+                name:update_user.name,
+                email:update_user.email,
+                photo:update_user.photo,
+                phone:update_user.phone,
+                bio:update_user.bio,
+            },process.env.SECRET_KEY) 
+
+            res.json(updated)
+        }else{
+            res.status(404)
+                throw new Error("user was not found.")
+        }
     }
     catch(error){
         res.status(500).json(error.message)
