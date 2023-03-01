@@ -1,6 +1,5 @@
 const joi = require("Joi")
 const jwt = require("jsonwebtoken")
-const bcrypt = require("bcrypt")
 const User = require("../models/User")
 
 const registerUser = async(req,res) =>{
@@ -17,13 +16,10 @@ const registerUser = async(req,res) =>{
         const users = User.findOne({email:req.body.email})
         if(users) res.status(400).json('user with this email already exists.')
 
-        const salt = await bcrypt.genSalt(10)
-        const hashPassword = await bcrypt.hash(req.body.password,salt)
-
         const new_user = await new User({
             name: req.body.name,
             email: req.body.email,
-            password: hashPassword,
+            password: req.body.password,
         })
         const user = await new_user.save()
         if(user){

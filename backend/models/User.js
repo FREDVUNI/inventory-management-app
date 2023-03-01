@@ -1,4 +1,5 @@
 const mongoose = require("mongoose")
+const bcrypt = require("bcrypt")
 
 const userSchema = mongoose.Schema({
     name:{
@@ -6,7 +7,7 @@ const userSchema = mongoose.Schema({
         required:[true,"user name is required"]
     },
     email:{
-        type:String,
+        type:String, 
         required:[true,"Email address is required"],
         unique:true,
         trim:true,
@@ -35,6 +36,16 @@ const userSchema = mongoose.Schema({
         default:"bio"
     }
 },{timestamps:true})
+
+userSchema.pre("save",async(next) =>{
+    if(!this.isModified("password")) return next()
+
+    const salt = await bcrypt.genSalt(10)
+    const hashPassword = await bcrypt.hash(this.password,salt)
+    this.password = hashPassword
+
+    next()
+})
 
 const User = mongoose.model("User",userSchema)
 module.exports = User
