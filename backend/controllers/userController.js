@@ -155,6 +155,15 @@ const loggedIn = async(req,res) =>{
 
 const updateProfile = async(req,res) =>{
     try{
+        const schema = joi.object({
+            name:string().min(2).max(25).unique().required(),
+            email:string().required().unique().email(),
+            password:string().min(6).required()
+        })
+
+        const { error } = schema.validate(req.body)
+        if(error) res.status(400).json(error.details[0].message)
+
         const user = await User.findById(req.user._id)
 
         if(user){
@@ -187,4 +196,46 @@ const updateProfile = async(req,res) =>{
     }
 }
 
-module.exports = { register,login,logout,user,loggedIn,updateProfile }
+const changePassword = async(req,res) =>{
+    try{
+        const schema = joi.object({
+            password:string().min(6).required()
+        })
+
+        const { error } = schema.validate(req.body)
+        if(error) res.status(400).json(error.details[0].message)
+
+        const user = await User.findById(req.user._id)
+
+        if(!user){
+            res.status(400)
+            throw new Error("user was not found")
+        }
+
+        const { password, oldPassword } = req.body
+
+        if(!password || !oldPassword){
+            res.status(400)
+            throw new Error("old and new password fields are required")
+        }
+
+        const checkPassword = await bcrypt.compare(oldPassword,user.password)
+
+        if(!checkPassword) res.status(400).json('The password you entered doesnot match your current password.')
+
+        if(user && checkPassword){
+            user.password = password
+            await user.save()
+            res.status(200).json('Password has been changed.')
+        }else{
+            res.status(400)
+            throw new Error("The password you entered doesnot match your current password.")
+        }
+
+    }
+    catch(error){
+        res.status(500).json(error.message)
+    }
+}
+
+module.exports = { register,login,logout,user,loggedIn,updateProfile,changePassword }
