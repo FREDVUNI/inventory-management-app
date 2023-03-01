@@ -2,11 +2,17 @@ const joi = require("Joi")
 const jwt = require("jsonwebtoken")
 const User = require("../models/User")
 
+const generateToken = (id) =>{
+    return jwt.sign({
+        id
+    },process.env.SECRET_KEY,{expiresIn:"1 day"})
+}
+
 const registerUser = async(req,res) =>{
     try{
         const schema = joi.object({
-            name:string().min(2).max(25).required(),
-            email:string().required().email(),
+            name:string().min(2).max(25).unique().required(),
+            email:string().required().unique().email(),
             password:string().min(6).required()
         })
 
@@ -30,8 +36,14 @@ const registerUser = async(req,res) =>{
                 bio:user.bio,
                 phone:user.phone,
                 photo:user.photo,
-            },process.env.SECRET_KEY)
-
+            },process.env.SECRET_KEY,{expiresIn:"1 day"})
+            res.cookie("token",token,{
+                path:"/",
+                httpOnly:true,
+                expires:new Date(Date.now() + 1000 * 86400),
+                sameSite: "none",
+                scure:true
+            })
             res.status(201).json(token)
         }else{
             res.status(400)
