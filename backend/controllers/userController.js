@@ -135,4 +135,31 @@ const user = async(req,res) =>{
     }
 }
 
-module.exports = { register,login,logout,user }
+const loggedIn = async(req,res) =>{
+    try{
+        const token = req.cookies.token
+
+        if(!token){
+            return res.json(false)
+        }
+
+        const verified = jwt.verify(token,process.env.SECRET_KEY)
+        if(verified){
+            return res.json(false)
+        }
+    }
+    catch(error){
+        res.status(500).json(error.message)
+    }
+}
+
+const updateProfile = async(req,res) =>{
+    try{
+
+    }
+    catch(error){
+        res.status(500).json(error.message)
+    }
+}
+
+module.exports = { register,login,logout,user,loggedIn,updateProfile }
