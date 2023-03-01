@@ -10,6 +10,8 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.json())
 dotenv.config({path:".env"})
 
+app.use("/api/users/",require("./routes/userRoutes"))
+
 const PORT = process.env.PORT || 9000
 
 app.listen(PORT,() =>{
