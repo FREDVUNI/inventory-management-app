@@ -238,4 +238,13 @@ const changePassword = async(req,res) =>{
     }
 }
 
-module.exports = { register,login,logout,user,loggedIn,updateProfile,changePassword }
+const forgotPassword = async() =>{
+    try{
+
+    }
+    catch(error){
+        res.status(500).json(error.message)
+    }
+}
+
+module.exports = { register,login,logout,user,loggedIn,updateProfile,changePassword,forgotPassword }
