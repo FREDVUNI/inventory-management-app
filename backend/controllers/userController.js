@@ -1,7 +1,9 @@
 const joi = require("Joi")
 const jwt = require("jsonwebtoken")
 const bcrypt = require("bcryptjs")
+const crypto = require("crypto")
 const User = require("../models/User")
+const sendEmail = require("../utils/sendEmail")
 
 const generateToken = (id) =>{
     return jwt.sign({
@@ -238,9 +240,51 @@ const changePassword = async(req,res) =>{
     }
 }
 
-const forgotPassword = async() =>{
+const forgotPassword = async(req,res) =>{
     try{
+        const { email } = req.body
+        const user = User.findOne({email})
 
+        if(!user){
+            res.status(400)
+            throw new Error("The user doesnot exist.")
+        }
+
+        let resetToken = crypto.randomBytes(32).toString("hex") + user._id
+        const hashedToken = crypto.createHash("sha256").update(resetToken).digest("hex")
+
+        await new Token({
+            userId: user._id,
+            token: hashedToken,
+            createdAt: Date.now(),
+            expiresAt: Date.now() + 30 * (60 * 1000) //30 mins
+        }).save()
+
+        const reset_url = `${process.env.CLIENT}/resetpassword/${resetToken}`
+
+        const message = `
+                <h2>Hello ${user.name}</h2>
+                <p>Please click on the link below to reset your password.</p>
+                <p>
+                    <h4>Note:</h4>
+                     This reset link is valid for only 30 minutes
+                </p>
+                <a href=${reset_url} clicktracking=Off>${reset_url}</a>
+                <p>Regards,</p>
+                <p>The inventory system team</p>
+        `
+
+        const subject = "Password Reset"
+        const send_to = user.email
+        const sent_from = process.env.EMAIL_USER
+
+        try{
+            await sendEmail(subject,message,send_to,sent_from)
+            res.status(200).json({success:true, message:'Email has been sent.'})
+        }
+        catch(error){
+            res.status(500).json('Email was not sent ' + error.message )
+        }
     }
     catch(error){
         res.status(500).json(error.message)
