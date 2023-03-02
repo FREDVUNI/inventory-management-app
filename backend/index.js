@@ -14,7 +14,7 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.json())
 dotenv.config({path:".env"})
 
-app.use("/api/users/",require("./routes/userRoutes"))
+app.use("/api/users",require("./routes/userRoutes"))
 
 const PORT = process.env.PORT || 9000
 
@@ -22,5 +22,5 @@ app.use(errorHandler)
 connectDB()
 
 app.listen(PORT,() =>{
-    console.log(`server started on http://localhost/${PORT}`)
+    console.log(`server started on http://localhost:${PORT}`)
 })
