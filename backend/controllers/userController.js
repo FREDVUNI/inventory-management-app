@@ -265,7 +265,7 @@ const forgotPassword = async(req,res) =>{
         if(token){
             await token.deleteOne()
         }
-        
+
         let resetToken = crypto.randomBytes(32).toString("hex") + user._id
         const hashedToken = crypto.createHash("sha256").update(resetToken).digest("hex")
 
@@ -277,7 +277,7 @@ const forgotPassword = async(req,res) =>{
             expiresAt: Date.now() + 30 * (60 * 1000) //30 mins
         }).save()
 
-        const reset_url = `${process.env.CLIENT}/resetpassword/${resetToken}`
+        const reset_url = `${process.env.CLIENT}/reset-password/${resetToken}`
 
         const message = `
                 <h2>Hello ${user.name}</h2>
@@ -308,4 +308,38 @@ const forgotPassword = async(req,res) =>{
     }
 }
 
-module.exports = { register,login,logout,user,loggedIn,updateProfile,changePassword,forgotPassword }
+const resetPassword = async(req,res) =>{
+    try{
+        const { password } = req.body
+        const { resetToken } = req.params
+
+        const hashedToken = crypto.createHash("sha256").update(resetToken).digest("hex")
+
+        //find token
+        const userToken = await Token.findOne({
+            token: hashedToken,
+            expiresAt: {$gt: Date.now() }
+        })
+
+        if(!userToken){
+            res.status(404)
+            throw new Error("The token is invalid or has expired.")
+        }
+
+        //find user
+
+        const user = await User.findOne({
+            _id: userToken.userId
+        })
+
+        user.password = password
+        await user.save()
+
+        res.status(200).json('password has been reset. You can now login.')
+    }
+    catch(error){
+        res.status(500).json(error.message)
+    }
+}
+
+module.exports = { register,login,logout,user,loggedIn,updateProfile,changePassword,forgotPassword,resetPassword }
