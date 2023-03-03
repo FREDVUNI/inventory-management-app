@@ -257,8 +257,18 @@ const forgotPassword = async(req,res) =>{
             throw new Error("The user doesnot exist.")
         }
         
+        //delete token if it exists
+        const token = await Token.findOne({
+            userId:user.user_id
+        })
+
+        if(token){
+            await token.deleteOne()
+        }
+        
         let resetToken = crypto.randomBytes(32).toString("hex") + user._id
         const hashedToken = crypto.createHash("sha256").update(resetToken).digest("hex")
+
 
         await new Token({
             userId: user._id,
