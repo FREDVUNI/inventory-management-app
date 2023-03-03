@@ -35,6 +35,9 @@ const userSchema = new mongoose.Schema({
         type:String,
         maxLength:[250,"Bio shouldnot be more than 250 characters long."],
         default:"bio"
+    },
+    slug:{
+        typeof:String
     }
 },{timestamps:true})
 

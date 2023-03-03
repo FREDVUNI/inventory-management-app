@@ -4,6 +4,9 @@ const categorySchema = new mongoose.Schema({
     category:{
         type:String,
         required: [true,"category is required"]
+    },
+    slug:{
+        type:String,
     }
 },{timestamps:true})
 

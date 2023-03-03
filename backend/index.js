@@ -15,6 +15,7 @@ app.use(express.json())
 dotenv.config({path:".env"})
 
 app.use("/api/users",require("./routes/userRoutes"))
+app.use("/api/category",require("./routes/categoryRoutes"))
 
 const PORT = process.env.PORT || 9000
 
