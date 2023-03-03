@@ -13,6 +13,10 @@ const createCategory = async(req,res) =>{
         if(error) res.status(400).json(error.details[0].message)
 
         const { category } = req.body
+
+        const categoryExists = await Category.findOne({category})
+        if(categoryExists) return res.status(409).json(`category already exists.`)
+
         await new Category({
             category,
             slug:createSlug(category)
