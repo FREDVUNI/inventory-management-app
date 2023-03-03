@@ -14,21 +14,22 @@ const generateToken = (id) =>{
 const register = async(req,res) =>{
     try{
         const schema = joi.object({
-            name:string().min(2).max(25).unique().required(),
-            email:string().required().unique().email(),
-            password:string().min(6).required()
+            name:joi.string().min(2).max(25).required(),
+            email:joi.string().required().email(),
+            password:joi.string().min(6).required()
         })
 
         const { error } = schema.validate(req.body)
-        if(error) res.status(400).json(error.details[0].message)
+        if(error) return res.status(400).json(error.details[0].message)
 
-        const users = User.findOne({email:req.body.email})
-        if(users) res.status(400).json('user with this email already exists.')
+        const { email,name,password } = req.body
+        const users = await User.findOne({email})
+        if(users) return res.status(400).json('user with this email already exists.')
 
-        const new_user = await new User({
-            name: req.body.name,
-            email: req.body.email,
-            password: req.body.password,
+        const new_user = new User({
+            name,
+            email,
+            password,
         })
         const user = await new_user.save()
         if(user){
@@ -40,6 +41,8 @@ const register = async(req,res) =>{
                 phone:user.phone,
                 photo:user.photo,
             },process.env.SECRET_KEY,{expiresIn:"1 day"})
+
+            // const token = generateToken(user._id)
             res.cookie("token",token,{
                 path:"/",
                 httpOnly:true,
@@ -67,21 +70,25 @@ const login = async(req,res) =>{
         })
 
         const { error } = schema.validate(req.body)
-        if(error) res.status(400).json(error.details[0].message)
+        if(error) return res.status(400).json(error.details[0].message)
 
-        const user = await User.findOne({email:req.body.email})
+        const { email,password } = req.body
 
-        if(!user) res.status(400).json('wrong email password combination')
+        const user = await User.findOne({email})
 
-        const verifyPassword = await bcrypt.compare(req.body.password,user.password)
+        if(!user) return res.status(400).json('wrong email password combination')
 
-        if(!verifyPassword) res.status(400).json('wrong email password combination')
+        const verifyPassword = await bcrypt.compare(password,user.password)
+
+        if(!verifyPassword) return res.status(400).json('wrong email password combination')
 
         if(user){
             const token = jwt.sign({
                 _id:user._id,
                 email:user.email,
             },process.env.SECRET_KEY,{expiresIn:"1 day"})
+
+            // const token = generateToken(user._id)
     
             res.cookie("token",token,{
                 path:"/",
@@ -92,8 +99,7 @@ const login = async(req,res) =>{
             })
             res.status(200).json(token)
         }else{
-            res.status(400)
-            throw new Error("wrong email password combination")
+            res.status(400).json('wrong email password combination')
         }
     }
     catch(error){
@@ -116,12 +122,12 @@ const user = async(req,res) =>{
     try{
         const user = await User.findById(req.user._id)
 
-        if(!user) res.status(400).json(`user was not found`)
-
-        const { _id,name,email,photo,phone,bio } = user
+        if(!user) return res.status(400).json(`user was not found`)
 
         if(user){
-            res.status(200).json({
+            const { _id,name,email,photo,phone,bio } = user
+
+            return res.status(200).json({
                 _id,
                 name,
                 email,
@@ -147,7 +153,7 @@ const loggedIn = async(req,res) =>{
 
         const verified = jwt.verify(token,process.env.SECRET_KEY)
         if(verified){
-            return res.json(false)
+            return res.json(true)
         }
     }
     catch(error){
@@ -158,9 +164,9 @@ const loggedIn = async(req,res) =>{
 const updateProfile = async(req,res) =>{
     try{
         const schema = joi.object({
-            name:string().min(2).max(25).unique().required(),
-            email:string().required().unique().email(),
-            password:string().min(6).required()
+            name:joi.string().min(2).max(25).required(),
+            email:joi.string().required().email(),
+            password:joi.string().min(6).required()
         })
 
         const { error } = schema.validate(req.body)
@@ -201,14 +207,14 @@ const updateProfile = async(req,res) =>{
 const changePassword = async(req,res) =>{
     try{
         const schema = joi.object({
-            password:string().min(6).required()
+            password:joi.string().min(6).required(),
+            oldPassword:joi.string().required(),
         })
 
         const { error } = schema.validate(req.body)
-        if(error) res.status(400).json(error.details[0].message)
+        if(error) return res.status(400).json(error.details[0].message)
 
         const user = await User.findById(req.user._id)
-
         if(!user){
             res.status(400)
             throw new Error("user was not found")
@@ -223,7 +229,7 @@ const changePassword = async(req,res) =>{
 
         const checkPassword = await bcrypt.compare(oldPassword,user.password)
 
-        if(!checkPassword) res.status(400).json('The password you entered doesnot match your current password.')
+        if(!checkPassword) return res.status(400).json('The password you entered doesnot match your current password.')
 
         if(user && checkPassword){
             user.password = password
