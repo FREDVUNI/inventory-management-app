@@ -1,12 +1,12 @@
 const nodemailer = require("nodemailer")
 
-const sendEmail = async(message,subject,send_to,sent_from,reply_to) =>{
+const sendEmail = async(subject,message,send_to,sent_from,reply_to) =>{
     const transporter = nodemailer.createTransport({
         host: process.env.EMAIL_HOST,
         port:587,
         auth:{
             user:process.env.EMAIL_USER,
-            password:process.env.EMAIL_PASSOWRD
+            pass:process.env.EMAIL_PASSWORD
         },
         tls:{
             rejectUnauthorized: false

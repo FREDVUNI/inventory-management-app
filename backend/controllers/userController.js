@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken")
 const bcrypt = require("bcryptjs")
 const crypto = require("crypto")
 const User = require("../models/User")
+const Token = require("../models/Token")
 const sendEmail = require("../utils/sendEmail")
 
 const generateToken = (id) =>{
@@ -249,13 +250,13 @@ const changePassword = async(req,res) =>{
 const forgotPassword = async(req,res) =>{
     try{
         const { email } = req.body
-        const user = User.findOne({email})
+        const user = await User.findOne({email})
 
         if(!user){
             res.status(400)
             throw new Error("The user doesnot exist.")
         }
-
+        
         let resetToken = crypto.randomBytes(32).toString("hex") + user._id
         const hashedToken = crypto.createHash("sha256").update(resetToken).digest("hex")
 
