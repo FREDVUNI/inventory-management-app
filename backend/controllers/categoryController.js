@@ -56,7 +56,30 @@ const category = async(req,res) =>{
 
 const updateCategory = async(req,res) =>{
     try{
+        const schema = joi.object({
+            category:joi.string().required()
+        })
 
+        const { error } = schema.validate(req.body)
+
+        if(error) res.status(400).json(error.details[0].message)
+
+        const id = req.params.id
+
+        const { category } = req.body
+        const categories = await Category.findById(id)
+        
+        if(id){
+            const { category } = categories
+            categories.category = req.body.category || category;
+            categories.slug = createSlug(categories.category);
+
+            const update_category = await categories.save()
+
+            res.status(201).json(update_category)
+        }else{
+            return res.status(404).json('category was not found.')
+        }
     }
     catch(error){
         res.status(500).json(error.message)
