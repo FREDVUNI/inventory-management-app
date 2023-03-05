@@ -1,5 +1,8 @@
+const express = require("express")
+const router = express.Router()
 const cloudinary = require("cloudinary")
-const { CloudinaryStorage } = require("multer-storage-cloudinary");
+const multer = require("multer")
+
 
 cloudinary.config({
     cloud_name:process.env.CLOUD_NAME,
@@ -8,26 +11,27 @@ cloudinary.config({
 })
 
 const storage = new CloudinaryStorage({
-  cloudinary: cloudinary,
-  params: {
-    folder: "stock",
-  },
+    cloudinary: cloudinary,
+    params: {
+      folder: "stock",
+    },
 });
 
-const upload = multer({ storage: storage });
+const upload = multer({ storage: storage }); 
 
-const uploadImage = async(req,res) =>{
+router.post("/",upload.single("imageUrl"),async(req,res)=>{
     try{
-        const data = {
-            imageUrl: req.file,
-        }
-
-        const result = await cloudinary.v2.uploader.upload(data.imageUrl)
-        res.status(200).json(result)
+        const result = await cloudinary.v2.uploader.upload(req.file.path)
+        const store = await prisma.upload.create({
+            data:{
+                imageUrl:result.url
+            }
+        })
+        res.status(200).json({message:'file has been uploaded.',data:store})
     }
     catch(error){
         res.status(400).json(error.message)
     }
-}
+})
 
-module.exports = {uploadImage}
+module.exports = router

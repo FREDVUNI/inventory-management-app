@@ -8,17 +8,29 @@ const create = async(req,res) =>{
             category:joi.string().required(),
             price:joi.string().required(),
             quantity:joi.price().required(),
-            dsecription:joi.string().required().max(250).min(15),
+            description:joi.string().required().max(250).min(15),
             image:joi.string().required(),
         })
 
         const { error } = schema.validate(req.body)
         if(error) return res.status(400).json(error.details[0].message)
 
-        const { product } = req.body
+        const { product,category,price,quantity,description,image } = req.body
         const productExists = await Product.findOne({product})
 
         if(productExists) return res.status(400).json('Product already exists')
+
+        const new_product = await new Product({
+            product,
+            category,
+            price,
+            quantity,
+            description,
+            image:image
+        }) 
+
+        const store = new_product.save()
+        return res.status(200).json(store)
     }
     catch(error){
         res.status(500).json(error.message)
