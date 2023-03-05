@@ -3,7 +3,22 @@ const joi = require("joi")
 
 const create = async(req,res) =>{
     try{
+        const schema = joi.object({
+            product:joi.string().required().max(30).min(2),
+            category:joi.string().required(),
+            price:joi.string().required(),
+            quantity:joi.price().required(),
+            dsecription:joi.string().required().max(250).min(15),
+            image:joi.string().required(),
+        })
 
+        const { error } = schema.validate(req.body)
+        if(error) return res.status(400).json(error.details[0].message)
+
+        const { product } = req.body
+        const productExists = await Product.findOne({product})
+
+        if(productExists) return res.status(400).json('Product already exists')
     }
     catch(error){
         res.status(500).json(error.message)

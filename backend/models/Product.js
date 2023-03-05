@@ -1,4 +1,5 @@
 const mongoose = require("mongoose")
+const createSlug = require("../utils/createSlug")
 
 const productSchema = new mongoose.Schema({
     product:{
@@ -29,6 +30,16 @@ const productSchema = new mongoose.Schema({
         type:String
     }
 },{timestamps:true})
+
+productSchema.pre("save",async function(next){
+    // if(!this.isModified("slug")){
+    //     return next()
+    // }
+
+    const slug = createSlug(this.slug)
+    this.slug = slug
+    next()
+})
 
 const Product = mongoose.model("Product",productSchema)
 
