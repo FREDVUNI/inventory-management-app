@@ -19,15 +19,10 @@ const storage = new CloudinaryStorage({
 
 const upload = multer({ storage: storage }); 
 
-router.post("/",upload.single("imageUrl"),async(req,res)=>{
+router.post("/upload",upload.single("file"),async(req,res)=>{
     try{
         const result = await cloudinary.v2.uploader.upload(req.file.path)
-        const store = await prisma.upload.create({
-            data:{
-                imageUrl:result.url
-            }
-        })
-        res.status(200).json({message:'file has been uploaded.',data:store})
+        res.status(200).json({message:'file has been uploaded.'})
     }
     catch(error){
         res.status(400).json(error.message)
