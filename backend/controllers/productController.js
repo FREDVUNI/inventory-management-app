@@ -1,13 +1,14 @@
 const Product = require("../models/Product")
 const joi = require("joi")
+const upload = require("../utils/upload")
 
-const create = async(req,res) =>{
+const addProduct = async(req,res) =>{
     try{
         const schema = joi.object({
             product:joi.string().required().max(30).min(2),
             category:joi.string().required(),
             price:joi.string().required(),
-            quantity:joi.price().required(),
+            quantity:joi.number().required(),
             description:joi.string().required().max(250).min(15),
             image:joi.string().required(),
         })
@@ -26,7 +27,7 @@ const create = async(req,res) =>{
             price,
             quantity,
             description,
-            image:image
+            image:upload(image)
         }) 
 
         const store = new_product.save()
@@ -37,7 +38,7 @@ const create = async(req,res) =>{
     }
 }
 
-const products = async(req,res) =>{
+const getProducts = async(req,res) =>{
     try{
 
     }
@@ -46,7 +47,7 @@ const products = async(req,res) =>{
     }
 }
 
-const product = async(req,res) =>{
+const getProduct = async(req,res) =>{
     try{
 
     }
@@ -73,4 +74,4 @@ const deleteProduct = async(req,res) =>{
     }
 }
 
-module.exports = { create,products,product,updateProduct,deleteProduct }
+module.exports = { addProduct,getProducts,getProduct,updateProduct,deleteProduct }
