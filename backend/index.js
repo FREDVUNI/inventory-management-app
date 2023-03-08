@@ -10,8 +10,10 @@ const app = express()
 app.use(morgan("tiny"))
 app.use(cors())
 app.use(cookieParser())
+
 app.use(express.urlencoded({extended:false}))
 app.use(express.json())
+
 dotenv.config({path:".env"})
 
 app.use("/api/users",require("./routes/userRoutes"))

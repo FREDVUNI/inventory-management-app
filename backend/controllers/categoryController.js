@@ -6,9 +6,7 @@ const createCategory = async(req,res) =>{
         const schema = joi.object({
             category:joi.string().required()
         })
-
         const { error } = schema.validate(req.body)
-
         if(error) return res.status(400).json(error.details[0].message)
 
         const { category } = req.body
@@ -16,10 +14,11 @@ const createCategory = async(req,res) =>{
         const categoryExists = await Category.findOne({category})
         if(categoryExists) return res.status(409).json(`category already exists.`)
 
-        await new Category({
-            category,
-        }).save()
-
+        const new_category = new Category({
+            category:req.body.category,
+            slug: category
+        })
+        await new_category.save()
         return res.status(200).json('category has been created.')
     }
     catch(error){
