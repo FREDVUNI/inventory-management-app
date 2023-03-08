@@ -1,16 +1,13 @@
-const cloudinary = require('./cloudinary.config');
-const { CloudinaryStorage } = require('multer-storage-cloudinary');
+const multer = require("multer")
+const cloudinary = require("cloudinary")
+
+cloudinary.config({
+  cloud_name:process.env.CLOUD_NAME,
+  api_key:process.env.API_KEY,
+  api_secret:process.env.API_SECRET,
+})
 
 // configure Cloudinary storage for multer
-const storage = new CloudinaryStorage({
-  cloudinary: cloudinary,
-  params: {
-    folder: 'stock',
-    allowed_formats: ['jpg', 'png'],
-    public_id: (req, file) => {
-      return `${Date.now()}-${file.originalname}`;
-    }
-  }
-});
+const storage = multer.diskStorage({})
 
 module.exports = storage;
