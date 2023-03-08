@@ -1,6 +1,6 @@
 const Product = require("../models/Product")
 const joi = require("joi")
-const upload = require("../utils/upload")
+const cloudinary = require("../config/cloudinary.config")
 
 const addProduct = async(req,res) =>{
     try{
@@ -10,7 +10,14 @@ const addProduct = async(req,res) =>{
             price:joi.string().required(),
             quantity:joi.number().required(),
             description:joi.string().required().max(250).min(15),
-            image:joi.string().required(),
+            image: joi.object({
+                fieldname: joi.string().required(),
+                originalname: joi.string().required(),
+                encoding: joi.string().required(),
+                mimetype: joi.string().valid('image/jpeg', 'image/png').required(),
+                size: joi.number().max(10 * 1024 * 1024).required(),
+                buffer: joi.binary().required()
+            }).required()
         })
 
         const { error } = schema.validate(req.body)
@@ -20,18 +27,19 @@ const addProduct = async(req,res) =>{
         const productExists = await Product.findOne({product})
 
         if(productExists) return res.status(400).json('Product already exists')
+        const result = await cloudinary.uploader.upload(req.file.path);
 
-        const new_product = await new Product({
+        const new_product = new Product({
             product,
             category,
             price,
             quantity,
             description,
-            image:upload(image)
+            image:result.secure_url
         }) 
 
-        const store = new_product.save()
-        return res.status(200).json(store)
+        await new_product.save()
+        return res.status(200).json('Product has been saved.')
     }
     catch(error){
         res.status(500).json(error.message)
