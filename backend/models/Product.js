@@ -28,6 +28,9 @@ const productSchema = new mongoose.Schema({
     },
     slug:{
         type:String
+    },
+    cloudinary_id:{
+        type:String
     }
 },{timestamps:true})
 

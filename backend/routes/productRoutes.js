@@ -17,24 +17,25 @@ router.post('/create',upload.single('image'),protect,async(req,res) =>{
             description:joi.string().required().max(250).min(15),
             // image: joi.string().required()
         })
-
         const { error } = schema.validate(req.body)
         if(error) return res.status(400).json(error.details[0].message)
 
-        const { product,category,price,quantity,description,image } = req.body
-        const productExists = await Product.findOne({product:product})
+        const { product,category,price,quantity,description } = req.body
 
+        const productExists = await Product.findOne({product:req.body.product})
         if(productExists) return res.status(400).json('Product already exists')
-        const result = await cloudinary.v2.uploader.upload(req.file.path)
 
-        const new_product = new Product({
+        const result = await cloudinary.uploader.upload(req.file.path,{folder:'stock'})
+
+        let new_product = new Product({
             product,
             category,
             price,
             quantity,
             description,
             slug:product,
-            image:result.secure_url
+            image:result.secure_url,
+            cloudinary_id:result.public_url
         }) 
 
         await new_product.save()
