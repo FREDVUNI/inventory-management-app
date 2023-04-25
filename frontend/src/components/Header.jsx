@@ -4,8 +4,8 @@ import { header } from '../data';
 // import icons
 import { HiMenuAlt4, HiOutlineX } from 'react-icons/hi';
 // import components
-import MobileNav from '../components/MobileNav';
-import Nav from '../components/Nav';
+import MobileNav from './MobileNav';
+import Nav from './Nav';
 
 const Header = () => {
   // mobile nav state

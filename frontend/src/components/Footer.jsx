@@ -2,7 +2,7 @@ import React from 'react';
 // import data
 import { footer } from '../data';
 // import components
-import Copyright from '../components/Copyright';
+import Copyright from './Copyright';
 
 const Footer = () => {
   // destructure footer data

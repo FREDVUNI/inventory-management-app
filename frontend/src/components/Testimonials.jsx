@@ -2,7 +2,7 @@ import React from 'react';
 // import data
 import { testimonials } from '../data';
 // import components
-import ClientSlider from '../components/ClientSlider';
+import ClientSlider from './ClientSlider';
 
 const Testimonials = () => {
   // destructure testimonials
