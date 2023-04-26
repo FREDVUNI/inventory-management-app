@@ -256,6 +256,8 @@ export const footer = {
   },
 };
 
+let currentYear = new Date().getFullYear();
+
 export const copyright = {
   link1: {
     name: 'Privacy & Terms',
@@ -265,7 +267,7 @@ export const copyright = {
     name: 'Contact us',
     href: '/',
   },
-  copyText: 'Copyright @ 2022 xpence',
+  copyText: `Copyright @ ${currentYear} xpence`,
   social: [
     { icon: FacebookIcon, href: '/' },
     { icon: TwitterIcon, href: '/' },
