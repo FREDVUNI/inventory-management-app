@@ -30,7 +30,7 @@ import LinkedinIcon from '../src/assets/img/copyright/linkedin.svg';
 
 export const header = {
   logo: LogoImg,
-  btnText: 'Request a demo',
+  btnText: 'Go To Dashboard',
 };
 
 export const nav = [

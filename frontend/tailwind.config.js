@@ -2,7 +2,7 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     fontFamily: {
-      primary: "Poppins, san-serif",
+      sans: ['Poppins', 'sans-serif'],
     },
     container: {
       padding: {

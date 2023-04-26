@@ -58,3 +58,8 @@
     @apply text-accent text-xl lg:text-2xl;
   }
 }
+@layer utilities {
+  .font-primary {
+    font-family: "Poppins", sans-serif;
+  }
+}
