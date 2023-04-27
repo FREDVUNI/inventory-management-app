@@ -1,25 +1,21 @@
-import React from 'react';
+import React from "react";
 // import data
-import { testimonials } from '../data';
+import { testimonials } from "../data";
 // import components
-import ClientSlider from './ClientSlider';
+import ClientSlider from "./ClientSlider";
 
 const Testimonials = () => {
   // destructure testimonials
   const { title, clients } = testimonials;
   return (
-    <section className='section'>
-      <div className='container mx-auto'>
+    <section className="section" id="testimonials">
+      <div className="container mx-auto">
         {/* title */}
-        <h2
-          className='title mb-10 lg:mb-20 text-center max-w-[920px] mx-auto'
-          data-aos='fade-up'
-          data-aos-delay='200'
-        >
+        <h2 className="title mb-10 lg:mb-20 text-center max-w-[920px] mx-auto">
           {title}
         </h2>
         {/* slider */}
-        <div data-aos='fade-up' data-aos-delay='400'>
+        <div data-aos="fade-up">
           <ClientSlider clients={clients} />
         </div>
       </div>

@@ -34,10 +34,10 @@ export const header = {
 };
 
 export const nav = [
-  { name: 'Features', href: '/' },
-  { name: 'About us', href: '/' },
-  { name: 'Pricing', href: '/' },
-  { name: 'Feedback', href: '/' },
+  { name: 'Features', href: '#features' },
+  { name: 'About Us', href: '#about' },
+  { name: 'Contact Us', href: '#contact' },
+  { name: 'Testimonials', href: '#testimonials' },
 ];
 
 export const hero = {
