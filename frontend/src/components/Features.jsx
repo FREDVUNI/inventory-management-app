@@ -25,4 +25,4 @@ const Features = () => {
   );
 };
 
-export default Feature2;
+export default Features;
