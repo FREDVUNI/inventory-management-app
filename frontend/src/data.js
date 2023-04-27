@@ -236,8 +236,6 @@ export const footer = {
     { name: 'About us', href: '/' },
     { name: 'Careers', href: '/' },
     { name: 'Pricing', href: '/' },
-    { name: 'Features', href: '/' },
-    { name: 'Blog', href: '/' },
   ],
   legal: [
     { name: 'Terms of use', href: '/' },

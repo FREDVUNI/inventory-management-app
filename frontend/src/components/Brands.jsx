@@ -11,9 +11,9 @@ const Brands = () => {
         {/* brands */}
         {brands.map((item, index) => {
           // destructure item
-          const { image, delay } = item;
+          const { image } = item;
           return (
-            <div key={index} data-aos='fade-up' data-aos-delay={delay}>
+            <div key={index}>
               {/* brand img */}
               <img src={image} alt='' />
             </div>
