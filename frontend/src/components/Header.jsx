@@ -7,7 +7,7 @@ import Nav from "./Nav";
 const Header = () => {
   const [mobileNav, setMobileNav] = useState(false);
   const [isActive, setIsActive] = useState(false);
-  const { logo, btnText } = header;
+  const { lologo, btnText } = header;
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
