@@ -1,14 +1,14 @@
 import React from "react";
 
 import MainLayout from "../../components/MainLayout";
-import CTA from "./container/CTA";
 import Hero from "./container/Hero";
+import About from "./container/About";
 
 const HomePage = () => {
   return (
     <MainLayout>
       <Hero />
-      <CTA />
+      <About/>
     </MainLayout>
   );
 };

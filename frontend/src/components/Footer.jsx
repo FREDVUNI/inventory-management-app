@@ -18,7 +18,7 @@ const Footer = () => {
           <h3 className="text-dark-light font-bold md:text-lg">Product</h3>
           <ul className="text-[#959EAD] text-sm mt-5 space-y-4 md:text-base">
             <li>
-              <a href="/">Landingpage</a>
+              <a href="/">Landing page</a>
             </li>
             <li>
               <a href="/">Features</a>
