@@ -92,7 +92,7 @@ const Footer = () => {
             className="brightness-0 invert mx-auto md:mx-0"
           />
           <p className="text-sm text-dark-light text-center mt-4 md:text-left md:text-base lg:text-sm">
-            Build a modern and creative website with crealand
+            Discover the power of efficient inventory management
           </p>
           <ul className="flex justify-center items-center mt-5 space-x-4 text-gray-300 md:justify-start">
             <li>
@@ -123,11 +123,8 @@ const Footer = () => {
           </ul>
         </div>
         <div className="hidden md:flex flex-col items-center space-y-4 md:col-span-12 lg:col-span-10">
-          <div className="bg-primary text-white p-3 rounded-full">
-            <AiFillHeart className="w-7 h-auto" />
-          </div>
-          <p className="font-bold italic text-dark-light">
-            Copyright © 2023. Crafted with love.
+          <p className="font-bold text-dark-light">
+            Copyright © {new Date().getFullYear()}
           </p>
         </div>
       </footer>
