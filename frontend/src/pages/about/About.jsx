@@ -1,6 +1,7 @@
 import React from "react";
 import MainLayout from "../../components/MainLayout";
 import { images } from "../../constants";
+import CTATestimonial from "../shared/CTATestimonial";
 
 const AboutPage = () => {
   return (
@@ -26,6 +27,7 @@ const AboutPage = () => {
             </p>
           </div>
         </div>
+        <CTATestimonial />
       </section>
     </MainLayout>
   );

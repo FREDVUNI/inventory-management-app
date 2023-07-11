@@ -2,6 +2,7 @@ import React from "react";
 import MainLayout from "../../components/MainLayout";
 import { images } from "../../constants";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
+import CTATestimonial from "../shared/CTATestimonial";
 
 const ContactPage = () => {
   return (
@@ -40,6 +41,7 @@ const ContactPage = () => {
             </ul>
           </div>
         </div>
+        <CTATestimonial/>
       </section>
     </MainLayout>
   );

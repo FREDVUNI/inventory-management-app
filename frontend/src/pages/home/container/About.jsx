@@ -1,6 +1,7 @@
 import React from "react";
 import { FiPackage, FiShoppingCart, FiBarChart2 } from "react-icons/fi";
 import { images } from "../../../constants";
+import CTATestimonial from "../../shared/CTATestimonial";
 
 const About = () => {
   return (
@@ -29,8 +30,6 @@ const About = () => {
       </div>
 
       <div className="mt-32">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Key Features</h2>
-
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="bg-white shadow rounded-lg p-6">
             <h3 className="text-xl font-semibold text-gray-800 mb-3">
@@ -72,25 +71,234 @@ const About = () => {
           </div>
         </div>
       </div>
+      <div class="container my-24 mx-auto md:px-6">
+        <section class="mb-2">
+          <div class="flex justify-center">
+            <div class="container mx-auto md:px-6">
+              <h2 class="mb-12 text-3xl font-bold">Features</h2>
+            </div>
+          </div>
 
-      <div className="py-32">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6">
-          Get Started Today
-        </h2>
+          <div class="grid gap-x-6 md:grid-cols-2 lg:grid-cols-4 xl:gap-x-12">
+            <div class="mb-12">
+              <div class="flex">
+                <div class="shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    class="mr-3 h-5 w-5 text-success"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div class="ml-2 grow">
+                  <p class="mb-1 font-bold">Support 24/7</p>
+                  <p class="text-neutral-500 dark:text-neutral-300">
+                    Pellentesque mollis, metus nec fringilla aliquam
+                  </p>
+                </div>
+              </div>
+            </div>
 
-        <p className="text-gray-600 text-lg">
-          Ready to take control of your inventory? Sign up for our inventory
-          management app today and experience the benefits of efficient
-          inventory management. Start maximizing your productivity and
-          minimizing stock-related issues.
-        </p>
+            <div class="mb-12">
+              <div class="flex">
+                <div class="shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    class="mr-3 h-5 w-5 text-success"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div class="ml-2 grow">
+                  <p class="mb-1 font-bold">Tracking</p>
+                  <p class="text-neutral-500 dark:text-neutral-300">
+                    Magna lacus iaculis elit, quis pharetra varius.
+                  </p>
+                </div>
+              </div>
+            </div>
 
-        <div className="flex mt-8">
-          <button className="bg-primary text-white font-semibold py-3 px-8 rounded-lg hover:bg-primary-dark">
-            Sign Up Now
-          </button>
-        </div>
+            <div class="mb-12">
+              <div class="flex">
+                <div class="shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    class="mr-3 h-5 w-5 text-success"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div class="ml-2 grow">
+                  <p class="mb-1 font-bold">Reporting</p>
+                  <p class="text-neutral-500 dark:text-neutral-300">
+                    Pellentesque varius ex vel consequat quis.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-12">
+              <div class="flex">
+                <div class="shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    class="mr-3 h-5 w-5 text-success"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div class="ml-2 grow">
+                  <p class="mb-1 font-bold">Analytics</p>
+                  <p class="text-neutral-500 dark:text-neutral-300">
+                    Vestibulum gravida iaculis nisl, vel lobortis eros.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-12">
+              <div class="flex">
+                <div class="shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    class="mr-3 h-5 w-5 text-success"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div class="ml-2 grow">
+                  <p class="mb-1 font-bold">Huge community</p>
+                  <p class="text-neutral-500 dark:text-neutral-300">
+                    Praesent vulputate lacus bibendum augue .
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-12">
+              <div class="flex">
+                <div class="shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    class="mr-3 h-5 w-5 text-success"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div class="ml-2 grow">
+                  <p class="mb-1 font-bold">Easy to use</p>
+                  <p class="text-neutral-500 dark:text-neutral-300">
+                    Sed mauris ex, imperdiet sit amet nisl ac, ultrices.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-12">
+              <div class="flex">
+                <div class="shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    class="mr-3 h-5 w-5 text-success"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div class="ml-2 grow">
+                  <p class="mb-1 font-bold">Frequent updates</p>
+                  <p class="text-neutral-500 dark:text-neutral-300">
+                    Aenean lectus ex, placerat id tellus in eros.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-12">
+              <div class="flex">
+                <div class="shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    class="mr-3 h-5 w-5 text-success"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <div class="ml-2 grow">
+                  <p class="mb-1 font-bold">Responsive</p>
+                  <p class="text-neutral-500 dark:text-neutral-300">
+                    Donec consequat orci quis volutpat imperdiet.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
+      <CTATestimonial/>
     </section>
   );
 };
