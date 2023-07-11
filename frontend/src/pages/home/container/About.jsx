@@ -29,10 +29,10 @@ const About = () => {
       </div>
 
       <div className="mt-32">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6">Key Features</h2>
+        <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Key Features</h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="bg-white shadow-lg rounded-lg p-6">
+          <div className="bg-white shadow rounded-lg p-6">
             <h3 className="text-xl font-semibold text-gray-800 mb-3">
               <FiPackage className="inline-block mr-2 text-primary" />
               Inventory Tracking
@@ -45,7 +45,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="bg-white shadow-lg rounded-lg p-6">
+          <div className="bg-white shadow rounded-lg p-6">
             <h3 className="text-xl font-semibold text-gray-800 mb-3">
               <FiShoppingCart className="inline-block mr-2 text-primary" />
               Order Management
@@ -58,7 +58,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="bg-white shadow-lg rounded-lg p-6">
+          <div className="bg-white shadow rounded-lg p-6">
             <h3 className="text-xl font-semibold text-gray-800 mb-3">
               <FiBarChart2 className="inline-block mr-2 text-primary" />
               Reporting and Analytics
