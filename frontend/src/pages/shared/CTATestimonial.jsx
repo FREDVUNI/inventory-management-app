@@ -13,6 +13,7 @@ const CTATestimonial = () => {
                 <img
                   src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).jpg"
                   class="w-32 rounded-full shadow-lg dark:shadow-black/20"
+                  alt="avatar"
                 />
               </div>
               <h5 class="mb-2 text-lg font-bold">Maria Smantha</h5>
@@ -101,6 +102,7 @@ const CTATestimonial = () => {
                 <img
                   src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).jpg"
                   class="w-32 rounded-full shadow-lg dark:shadow-black/20"
+                  alt="avatar"
                 />
               </div>
               <h5 class="mb-2 text-lg font-bold">Lisa Cudrow</h5>
@@ -189,6 +191,7 @@ const CTATestimonial = () => {
                 <img
                   src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).jpg"
                   class="w-32 rounded-full shadow-lg dark:shadow-black/20"
+                  alt="avatar"
                 />
               </div>
               <h5 class="mb-2 text-lg font-bold">John Smith</h5>
