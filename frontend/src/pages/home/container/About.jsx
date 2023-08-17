@@ -10,7 +10,7 @@ const About = () => {
         <div className="md:w-1/2">
           <img
             className="w-full"
-            src={images.HeroImage}
+            src={images.AboutImage}
             alt="Inventory Management"
           />
         </div>

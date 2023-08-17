@@ -99,11 +99,11 @@ const Header = () => {
         <div className="lg:hidden z-50">
           {navIsVisible ? (
             <AiOutlineClose
-              className="w-6 h-6"
+              className="w-6 h-6 cursor-pointer"
               onClick={navVisibilityHandler}
             />
           ) : (
-            <AiOutlineMenu className="w-6 h-6" onClick={navVisibilityHandler} />
+            <AiOutlineMenu className="w-6 h-6 cursor-pointer" onClick={navVisibilityHandler} />
           )}
         </div>
         <div
