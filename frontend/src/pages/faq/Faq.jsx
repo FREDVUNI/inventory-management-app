@@ -1,6 +1,8 @@
 import React from "react";
 import MainLayout from "../../components/MainLayout";
 import CTATestimonial from "../shared/CTATestimonial";
+import { Link } from "react-router-dom";
+import { images } from "../../constants";
 
 const FAQPage = () => {
   return (
@@ -9,20 +11,25 @@ const FAQPage = () => {
         <div class="container my-24 mx-auto md:px-6">
           <div class="grid gap-4 md:grid-cols-2">
             <div class="mb-6 md:mb-0">
-              <h2 class="mb-6 text-3xl font-bold">
+              <h2 class="mb-6 text-3xl font-bold text-gray-800">
                 Frequently asked questions
               </h2>
 
               <p class="text-neutral-500 dark:text-neutral-300 ">
                 Didn't find your answer in the FAQ?
-                <a
-                  href="#!"
+                <Link
+                  to="/contact"
                   class="text-primary ml-3 transition duration-300 hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600"
                 >
                   Contact our sales team
-                </a>
+                </Link>
                 .
               </p>
+              <img
+                className="w-full"
+                src={images.AboutImage}
+                alt="Inventory Management"
+              />
             </div>
 
             <div class="mb-6 md:mb-0">
