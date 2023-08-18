@@ -3,30 +3,30 @@ import React from "react";
 const CTATestimonial = () => {
   return (
     <>
-      <div class="container my-24 mx-auto md:px-6">
-        <section class="mb-32 text-center">
-          <h2 class="mb-12 text-3xl font-bold">Testimonials</h2>
+      <div className="container my-24 mx-auto md:px-6">
+        <section className="mb-32 text-center">
+          <h2 className="mb-12 text-3xl font-bold text-gray-800">Testimonials</h2>
 
-          <div class="grid gap-x-6 md:grid-cols-3 lg:gap-x-12">
-            <div class="mb-12 md:mb-0">
-              <div class="mb-6 flex justify-center">
+          <div className="grid gap-x-6 md:grid-cols-3 lg:gap-x-12">
+            <div className="mb-12 md:mb-0">
+              <div className="mb-6 flex justify-center">
                 <img
                   src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).jpg"
-                  class="w-32 rounded-full shadow-lg dark:shadow-black/20"
+                  className="w-32 rounded-full shadow-lg dark:shadow-black/20"
                   alt="avatar"
                 />
               </div>
-              <h5 class="mb-2 text-lg font-bold">Maria Smantha</h5>
-              <h6 class="mb-4 font-medium text-primary dark:text-primary-400">
+              <h5 className="mb-2 text-lg font-bold text-gray-800">Maria Smantha</h5>
+              <h6 className="mb-4 font-medium text-primary dark:text-primary-400">
                 Web Developer
               </h6>
-              <p class="mb-4">
+              <p className="mb-4">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
                 eos id officiis hic tenetur quae quaerat ad velit ab hic.
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 96 960 960"
-                  class="inline-block w-6"
+                  className="inline-block w-6"
                 >
                   <path
                     fill="currentColor"
@@ -34,12 +34,12 @@ const CTATestimonial = () => {
                   />
                 </svg>
               </p>
-              <ul class="mb-0 flex justify-center">
+              <ul className="mb-0 flex justify-center text-primary">
                 <li>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 96 960 960"
-                    class="w-5 text-warning"
+                    className="w-5 text-warning"
                   >
                     <path
                       fill="currentColor"
@@ -51,7 +51,7 @@ const CTATestimonial = () => {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 96 960 960"
-                    class="w-5 text-warning"
+                    className="w-5 text-warning"
                   >
                     <path
                       fill="currentColor"
@@ -63,7 +63,7 @@ const CTATestimonial = () => {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 96 960 960"
-                    class="w-5 text-warning"
+                    className="w-5 text-warning"
                   >
                     <path
                       fill="currentColor"
@@ -75,7 +75,7 @@ const CTATestimonial = () => {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 96 960 960"
-                    class="w-5 text-warning"
+                    className="w-5 text-warning"
                   >
                     <path
                       fill="currentColor"
@@ -87,7 +87,7 @@ const CTATestimonial = () => {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 96 960 960"
-                    class="w-5 text-warning"
+                    className="w-5 text-warning"
                   >
                     <path
                       fill="currentColor"
@@ -97,25 +97,25 @@ const CTATestimonial = () => {
                 </li>
               </ul>
             </div>
-            <div class="mb-12 md:mb-0">
-              <div class="mb-6 flex justify-center">
+            <div className="mb-12 md:mb-0">
+              <div className="mb-6 flex justify-center">
                 <img
                   src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).jpg"
-                  class="w-32 rounded-full shadow-lg dark:shadow-black/20"
+                  className="w-32 rounded-full shadow-lg dark:shadow-black/20"
                   alt="avatar"
                 />
               </div>
-              <h5 class="mb-2 text-lg font-bold">Lisa Cudrow</h5>
-              <h6 class="mb-4 font-medium text-primary dark:text-primary-400">
+              <h5 className="mb-2 text-lg font-bold text-gray-800">Lisa Cudrow</h5>
+              <h6 className="mb-4 font-medium text-primary dark:text-primary-400">
                 Graphic Designer
               </h6>
-              <p class="mb-4">
+              <p className="mb-4">
                 Ut enim ad minima veniam, quis nostrum exercitationem ullam
                 corporis suscipit laboriosam, nisi ut aliquid commodi.
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 96 960 960"
-                  class="inline-block w-6"
+                  className="inline-block w-6"
                 >
                   <path
                     fill="currentColor"
@@ -123,12 +123,12 @@ const CTATestimonial = () => {
                   />
                 </svg>
               </p>
-              <ul class="mb-0 flex justify-center">
+              <ul className="mb-0 flex justify-center text-primary">
                 <li>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 96 960 960"
-                    class="w-5 text-warning"
+                    className="w-5 text-warning"
                   >
                     <path
                       fill="currentColor"
@@ -140,7 +140,7 @@ const CTATestimonial = () => {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 96 960 960"
-                    class="w-5 text-warning"
+                    className="w-5 text-warning"
                   >
                     <path
                       fill="currentColor"
@@ -152,7 +152,7 @@ const CTATestimonial = () => {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 96 960 960"
-                    class="w-5 text-warning"
+                    className="w-5 text-warning"
                   >
                     <path
                       fill="currentColor"
@@ -164,7 +164,7 @@ const CTATestimonial = () => {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 96 960 960"
-                    class="w-5 text-warning"
+                    className="w-5 text-warning"
                   >
                     <path
                       fill="currentColor"
@@ -176,7 +176,7 @@ const CTATestimonial = () => {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 96 960 960"
-                    class="w-5 text-warning"
+                    className="w-5 text-warning"
                   >
                     <path
                       fill="currentColor"
@@ -186,25 +186,25 @@ const CTATestimonial = () => {
                 </li>
               </ul>
             </div>
-            <div class="mb-0">
-              <div class="mb-6 flex justify-center">
+            <div className="mb-0">
+              <div className="mb-6 flex justify-center">
                 <img
                   src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).jpg"
-                  class="w-32 rounded-full shadow-lg dark:shadow-black/20"
+                  className="w-32 rounded-full shadow-lg dark:shadow-black/20"
                   alt="avatar"
                 />
               </div>
-              <h5 class="mb-2 text-lg font-bold">John Smith</h5>
-              <h6 class="mb-4 font-medium text-primary dark:text-primary-400">
+              <h5 className="mb-2 text-lg font-bold text-gray-800">John Smith</h5>
+              <h6 className="mb-4 font-medium text-primary dark:text-primary-400">
                 Marketing Specialist
               </h6>
-              <p class="mb-4">
+              <p className="mb-4">
                 At vero eos et accusamus et iusto odio dignissimos ducimus qui
                 blanditiis praesentium voluptatum deleniti atque corrupti.
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 96 960 960"
-                  class="inline-block w-6"
+                  className="inline-block w-6"
                 >
                   <path
                     fill="currentColor"
@@ -212,12 +212,12 @@ const CTATestimonial = () => {
                   />
                 </svg>
               </p>
-              <ul class="mb-0 flex justify-center">
+              <ul className="mb-0 flex justify-center text-primary">
                 <li>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 96 960 960"
-                    class="w-5 text-warning"
+                    className="w-5 text-warning"
                   >
                     <path
                       fill="currentColor"
@@ -229,7 +229,7 @@ const CTATestimonial = () => {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 96 960 960"
-                    class="w-5 text-warning"
+                    className="w-5 text-warning"
                   >
                     <path
                       fill="currentColor"
@@ -241,7 +241,7 @@ const CTATestimonial = () => {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 96 960 960"
-                    class="w-5 text-warning"
+                    className="w-5 text-warning"
                   >
                     <path
                       fill="currentColor"
@@ -253,7 +253,7 @@ const CTATestimonial = () => {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 96 960 960"
-                    class="w-5 text-warning"
+                    className="w-5 text-warning"
                   >
                     <path
                       fill="currentColor"
@@ -265,7 +265,7 @@ const CTATestimonial = () => {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 96 960 960"
-                    class="w-5 text-warning"
+                    className="w-5 text-warning"
                   >
                     <path
                       fill="currentColor"
