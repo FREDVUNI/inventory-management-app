@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CTATestimonial = () => {
   return (
@@ -291,7 +292,7 @@ const CTATestimonial = () => {
 
           <div className="flex mt-8">
             <button className="bg-primary text-white font-semibold py-3 px-8 rounded-lg hover:bg-primary-dark">
-              Sign Up Now
+              <Link to="/register">Sign Up Now</Link>
             </button>
           </div>
         </div>
