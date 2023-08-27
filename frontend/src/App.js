@@ -34,6 +34,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/dashboard" element={<Home />} />
+        <Route path="*" element={<HomePage />} />
       </Routes>
       <Toaster />
     </div>
