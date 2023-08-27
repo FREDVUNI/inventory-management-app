@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Sidebar from "./components/SideBar";
 import MainContent from "./components/MainContent";
 
-const HomePage = () => {
+const Home = () => {
   const storedDarkMode = localStorage.getItem("darkMode") === "true";
   const [isSidebarClosed, setIsSidebarClosed] = useState(false);
   const [isSearchFormVisible, setIsSearchFormVisible] = useState(false);
@@ -39,4 +39,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Home;

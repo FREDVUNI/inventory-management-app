@@ -13,7 +13,7 @@ import PricingPage from "./pages/pricing/Pricing";
 import FAQPage from "./pages/faq/Faq";
 
 // admin
-import 
+import Home from "./admin/pages/Home";
 
 function App() {
    const location = useLocation();
@@ -33,6 +33,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/dashboard" element={<Home />} />
       </Routes>
       <Toaster />
     </div>
