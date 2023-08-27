@@ -12,6 +12,9 @@ import ContactPage from "./pages/contact/Contact";
 import PricingPage from "./pages/pricing/Pricing";
 import FAQPage from "./pages/faq/Faq";
 
+// admin
+import 
+
 function App() {
    const location = useLocation();
 

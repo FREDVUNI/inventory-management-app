@@ -1,5 +1,5 @@
 import React from "react";
-import Table from "../Table";
+import Table from "./Table";
 import customers from '../data/customers.json'
 const customerTableHead = [
   "",
