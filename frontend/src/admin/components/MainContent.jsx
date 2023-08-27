@@ -9,16 +9,16 @@ const MainContent = ({ isDarkMode }) => {
           <h1>Dashboard</h1>
           <ul className="breadcrumb">
             <li>
-              <a href="#">Analytics</a>
+              <a href="/analytics">Analytics</a>
             </li>
             <li>
-              <a href="#" className="active">
+              <a href="/shop" className="active">
                 Shop
               </a>
             </li>
           </ul>
         </div>
-        <a href="#" className="report">
+        <a href="/report" className="report">
           <i className="bx bx-cloud-download"></i>
           <span>Download CSV</span>
         </a>
@@ -75,7 +75,7 @@ const MainContent = ({ isDarkMode }) => {
               <tbody>
                 <tr>
                   <td>
-                    <img src="images/profile-1.jpg" />
+                    <img src="images/profile-1.jpg" alt="user" />
                     <p>John Doe</p>
                   </td>
                   <td>14-08-2023</td>
@@ -85,7 +85,7 @@ const MainContent = ({ isDarkMode }) => {
                 </tr>
                 <tr>
                   <td>
-                    <img src="images/profile-1.jpg" />
+                    <img src="images/profile-1.jpg" alt="user" />
                     <p>John Doe</p>
                   </td>
                   <td>14-08-2023</td>
@@ -95,7 +95,7 @@ const MainContent = ({ isDarkMode }) => {
                 </tr>
                 <tr>
                   <td>
-                    <img src="images/profile-1.jpg" />
+                    <img src="images/profile-1.jpg" alt="user" />
                     <p>John Doe</p>
                   </td>
                   <td>14-08-2023</td>

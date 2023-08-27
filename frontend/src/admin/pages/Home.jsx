@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/SideBar";
-import MainContent from "./components/MainContent";
+import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
+import MainContent from "../components/MainContent";
 
 const Home = () => {
   const storedDarkMode = localStorage.getItem("darkMode") === "true";

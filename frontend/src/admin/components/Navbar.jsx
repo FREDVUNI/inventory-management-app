@@ -24,11 +24,11 @@ const Navbar = ({
         onChange={onDarkModeToggle}
       />
       <label htmlFor="theme-toggle" className="theme-toggle"></label>
-      <a href="#" className="notif">
+      <a href="/messages" className="notif">
         <i className="bx bx-bell"></i>
         <span className="count">12</span>
       </a>
-      <a href="#" className="profile">
+      <a href="/profile" className="profile">
         <img src="images/logo.png" alt="Profile" />
       </a>
     </nav>
