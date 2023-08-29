@@ -24,7 +24,7 @@ const Home = () => {
   };
 
   return (
-    <div className={`app ${isDarkMode ? "dark" : ""}`}>
+    <div className={`app ${isDarkMode ? "dark" : ""} admin-home-container`}>
       <Sidebar isClosed={isSidebarClosed} />
       <div className="content">
         <Navbar
