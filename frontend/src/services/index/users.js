@@ -9,9 +9,10 @@ export const signup = async ({ name, email, password }) => {
     });
     return data;
   } catch (error) {
-    if (error.response && error.response.data.message)
-      throw new Error(error.response.data.message);
-    throw new Error(error.message);
+    // console.log(error.response.data);
+    if (error.response && error.response.data)
+      throw new Error(error.response.data);
+    throw new Error(error.response.data);
   }
 };
 
@@ -23,9 +24,10 @@ export const login = async ({ email, password }) => {
     });
     return data;
   } catch (error) {
-    if (error.response && error.response.data.message)
-      throw new Error(error.response.data.message);
-    throw new Error(error.message);
+    // console.log(error.response.data);
+    if (error.response && error.response.data)
+      throw new Error(error.response.data);
+    throw new Error(error.response.data);
   }
 };
 
