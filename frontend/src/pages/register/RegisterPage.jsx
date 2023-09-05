@@ -85,7 +85,7 @@ const RegisterPage = () => {
                   },
                 })}
                 placeholder="Enter name"
-                className={`placeholder:text-[#959ead] text-dark-hard mt-3 rounded-lg px-5 py-4 font-semibold block outline-none border ${
+                className={`placeholder:text-[#959ead] text-dark-hard mt-3 rounded-lg px-5 py-4 block outline-none border ${
                   errors.name ? "border-red-500" : "border-[#c3cad9]"
                 }`}
               />
@@ -117,7 +117,7 @@ const RegisterPage = () => {
                   },
                 })}
                 placeholder="Enter email"
-                className={`placeholder:text-[#959ead] text-dark-hard mt-3 rounded-lg px-5 py-4 font-semibold block outline-none border ${
+                className={`placeholder:text-[#959ead] text-dark-hard mt-3 rounded-lg px-5 py-4 block outline-none border ${
                   errors.email ? "border-red-500" : "border-[#c3cad9]"
                 }`}
               />
