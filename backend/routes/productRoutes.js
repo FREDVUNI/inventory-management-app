@@ -4,7 +4,6 @@ const upload = require('../utils/imageUpload');
 const protect = require("../middleware/authMiddleware")
 const cloudinary = require("../config/cloudinary.config")
 const Product = require("../models/Product")
-const joi = require("joi")
 
 // Route for uploading an image
 router.post('/create',upload.single('image'),protect,async(req,res) =>{
