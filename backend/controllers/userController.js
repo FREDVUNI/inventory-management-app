@@ -51,15 +51,15 @@ const register = async(req,res) =>{
                 sameSite: "none",
                 scure:true
             })
-            res.status(201).json(token)
+            return res.status(201).json(token)
         }else{
-            res.status(400)
+            return res.status(400)
             throw new Error("Invalid user data")
         }
 
     }
     catch(error){
-        res.status(500).json(error.message)
+        return res.status(500).json(error.message)
     }
 }
 
@@ -98,13 +98,13 @@ const login = async(req,res) =>{
                 sameSite: "none",
                 scure:true
             })
-            res.status(200).json(token)
+            return res.status(200).json(token)
         }else{
-            res.status(400).json('wrong email password combination')
+            return res.status(400).json('wrong email password combination')
         }
     }
     catch(error){
-        res.status(500).json(error.message)
+        return res.status(500).json(error.message)
     }
 }
 
@@ -116,7 +116,7 @@ const logout = async(req,res) =>{
         sameSite: "none",
         scure:true
     })
-    res.status(200).json('You have been logged out.')
+    return res.status(200).json('You have been logged out.')
 }
 
 const user = async(req,res) =>{
@@ -140,7 +140,7 @@ const user = async(req,res) =>{
 
     }
     catch(error){
-        res.status(500).json(error.message)
+        return res.status(500).json(error.message)
     }
 }
 
@@ -158,7 +158,7 @@ const loggedIn = async(req,res) =>{
         }
     }
     catch(error){
-        res.status(500).json(error.message)
+        return res.status(500).json(error.message)
     }
 }
 
@@ -194,14 +194,14 @@ const updateProfile = async(req,res) =>{
                 bio:update_user.bio,
             },process.env.SECRET_KEY) 
 
-            res.json(updated)
+            return res.json(updated)
         }else{
             res.status(404)
                 throw new Error("user was not found.")
         }
     }
     catch(error){
-        res.status(500).json(error.message)
+        return res.status(500).json(error.message)
     }
 }
 
@@ -243,7 +243,7 @@ const changePassword = async(req,res) =>{
 
     }
     catch(error){
-        res.status(500).json(error.message)
+        return res.status(500).json(error.message)
     }
 }
 
@@ -297,14 +297,14 @@ const forgotPassword = async(req,res) =>{
 
         try{
             await sendEmail(subject,message,send_to,sent_from)
-            res.status(200).json({success:true, message:'Email has been sent.'})
+            return res.status(200).json({success:true, message:'Email has been sent.'})
         }
         catch(error){
-            res.status(500).json('Email was not sent ' + error.message )
+            return res.status(500).json('Email was not sent ' + error.message )
         }
     }
     catch(error){
-        res.status(500).json(error.message)
+        return res.status(500).json(error.message)
     }
 }
 
@@ -335,10 +335,10 @@ const resetPassword = async(req,res) =>{
         user.password = password
         await user.save()
 
-        res.status(200).json('password has been reset. You can now login.')
+        return res.status(200).json('password has been reset. You can now login.')
     }
     catch(error){
-        res.status(500).json(error.message)
+        return res.status(500).json(error.message)
     }
 }
 

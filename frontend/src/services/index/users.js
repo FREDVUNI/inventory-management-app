@@ -39,7 +39,7 @@ export const getUserProfile = async ({ token }) => {
       },
     };
 
-    const { data } = await axios.get("/api/users/profile", config);
+    const { data } = await axios.get("/api/users/user", config);
     return data;
   } catch (error) {
     if (error.response && error.response.data.message)
