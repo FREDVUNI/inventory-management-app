@@ -34,6 +34,7 @@ export const login = async ({ email, password }) => {
 export const getUserProfile = async ({ token }) => {
   try {
     const config = {
+      withCredentials: true,
       headers: {
         Authorization: `Bearer ${token}`,
       },
