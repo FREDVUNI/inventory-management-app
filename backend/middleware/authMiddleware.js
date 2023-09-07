@@ -6,7 +6,6 @@ const protect = async(req,res,next) =>{
         const token = req.cookies.token
         if(!token){
             return res.status(401).json("You\'re not authorized ...")
-            // throw new Error("You\'re not authorized")
         }
 
         const verified = jwt.verify(token,process.env.SECRET_KEY)
@@ -15,7 +14,6 @@ const protect = async(req,res,next) =>{
 
         if(!user){
             return res.status(401).json("You\'re not authorized")
-            // throw new Error("You\'re not authorized")
         }
         req.user = user
         next()
