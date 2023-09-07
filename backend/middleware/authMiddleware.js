@@ -20,7 +20,6 @@ const protect = async(req,res,next) =>{
     }
     catch(error){
         return res.status(401).json("You\'re not authorized")
-            // throw new Error("You\'re not authorized")
     }
 }
 
