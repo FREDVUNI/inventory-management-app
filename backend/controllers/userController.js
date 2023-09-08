@@ -133,8 +133,7 @@ const logout = async (req, res) => {
 const user = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);
-
-    if (!user) return res.status(400).json(`user was not found`);
+    if (!user) return res.status(404).json(`user was not found`);
 
     if (user) {
       const { _id, name, email, photo, phone, bio } = user;
