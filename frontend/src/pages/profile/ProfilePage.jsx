@@ -16,21 +16,26 @@ const ProfilePage = () => {
   const queryClient = useQueryClient();
   const userState = useSelector((state) => state.user);
 
+  // Extract the token from userState.userInfo
+  const token = userState.userInfo ? userState.userInfo.token : "";
+
   const {
     data: profileData,
     isLoading: profileIsLoading,
     error: profileError,
   } = useQuery({
     queryFn: () => {
-      return getUserProfile({ token: userState.userInfo.token });
+      // Pass the token as a string
+      return getUserProfile({ token });
     },
     queryKey: ["profile"],
   });
 
   const { mutate, isLoading: updateProfileIsLoading } = useMutation({
     mutationFn: ({ name, email, password }) => {
+      // Pass the token as a string
       return updateProfile({
-        token: userState.userInfo.token,
+        token,
         userData: { name, email, password },
       });
     },
