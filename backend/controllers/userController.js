@@ -1,4 +1,3 @@
-const joi = require("Joi");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const crypto = require("crypto");
