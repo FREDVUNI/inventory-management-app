@@ -1,3 +1,4 @@
+const joi = require("joi");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const crypto = require("crypto");
@@ -62,7 +63,6 @@ const register = async (req, res) => {
       return res.status(201).json(token);
     } else {
       return res.status(400);
-      throw new Error("Invalid user data");
     }
   } catch (error) {
     return res.status(500).json(error.message);
