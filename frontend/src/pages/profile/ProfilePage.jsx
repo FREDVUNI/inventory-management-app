@@ -17,8 +17,8 @@ const ProfilePage = () => {
   const userState = useSelector((state) => state.user);
 
   // Extract the token from userState.userInfo
-  const token = userState.userInfo ? userState.userInfo.token : "";
-
+  const token = userState.userInfo ? userState.userInfo : "";
+  
   const {
     data: profileData,
     isLoading: profileIsLoading,
