@@ -1,45 +1,45 @@
 // cloudinary.js
 
-const cloudinary = require('cloudinary').v2;
+const cloudinary = require("cloudinary").v2;
 
 cloudinary.config({
-  cloud_name: 'YOUR_CLOUD_NAME',
-  api_key: 'YOUR_API_KEY',
-  api_secret: 'YOUR_API_SECRET'
+  cloud_name: "YOUR_CLOUD_NAME",
+  api_key: "YOUR_API_KEY",
+  api_secret: "YOUR_API_SECRET",
 });
 
 module.exports = cloudinary;
 
 // model
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   price: {
     type: Number,
-    required: true
+    required: true,
   },
   quantity: {
     type: Number,
-    required: true
+    required: true,
   },
   imageUrl: {
     type: String,
-    required: true
-  }
+    required: true,
+  },
 });
 
-const Product = mongoose.model('Product', productSchema);
+const Product = mongoose.model("Product", productSchema);
 
 module.exports = Product;
 
 // controller
-const Joi = require('joi');
-const cloudinary = require('../cloudinary');
-const Product = require('../models/Product');
+const Joi = require("joi");
+const cloudinary = require("../cloudinary");
+const Product = require("../models/Product");
 
 exports.createProduct = async (req, res) => {
   try {
@@ -49,8 +49,8 @@ exports.createProduct = async (req, res) => {
       quantity: Joi.number().required(),
       image: Joi.object({
         path: Joi.string().required(),
-        filename: Joi.string().required()
-      }).required()
+        filename: Joi.string().required(),
+      }).required(),
     });
 
     const { error, value } = schema.validate(req.body, { abortEarly: false });
@@ -68,13 +68,15 @@ exports.createProduct = async (req, res) => {
 
     const { path, filename } = image;
 
-    const result = await cloudinary.uploader.upload(path, { public_id: filename });
+    const result = await cloudinary.uploader.upload(path, {
+      public_id: filename,
+    });
 
     const product = new Product({
       name,
       price,
       quantity,
-      imageUrl: result.secure_url
+      imageUrl: result.secure_url,
     });
 
     await product.save();
@@ -82,20 +84,20 @@ exports.createProduct = async (req, res) => {
     res.json(product);
   } catch (err) {
     console.error(err);
-    res.status(500).send('Server error');
+    res.status(500).send("Server error");
   }
 };
 // routes
-const express = require('express');
-const productsController = require('../controllers/products');
+const express = require("express");
+const productsController = require("../controllers/products");
 
-router.post('/', productsController.createProduct);
+router.post("/", productsController.createProduct);
 
 module.exports = router;
 // more controller
-const Joi = require('joi');
-const cloudinary = require('../config/cloudinary');
-const Products = require('../models/productModel');
+const Joi = require("joi");
+const cloudinary = require("../config/cloudinary");
+const Products = require("../models/productModel");
 
 const productSchemas = Joi.object({
   product: Joi.string().required(),
@@ -110,7 +112,7 @@ exports.createProduct = async (req, res) => {
     if (error) return res.status(400).send(error.details[0].message);
 
     const result = await cloudinary.uploader.upload(req.body.imageUrl);
-    const product = new Product({ 
+    const product = new Product({
       product: req.body.product,
       price: req.body.price,
       quantity: req.body.quantity,
@@ -121,10 +123,9 @@ exports.createProduct = async (req, res) => {
     res.send(product);
   } catch (error) {
     console.error(error);
-    res.status(500).send('Server error');
+    res.status(500).send("Server error");
   }
 };
-
 
 const router = require("express").Router();
 const cloudinary = require("../utils/cloudinary");
