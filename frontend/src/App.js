@@ -16,7 +16,7 @@ import FAQPage from "./pages/faq/Faq";
 import Home from "./admin/pages/Home";
 
 function App() {
-   const location = useLocation();
+  const location = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
