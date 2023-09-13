@@ -1,8 +1,8 @@
 import React from "react";
-import jdenticon from 'jdenticon';
+import { toSvg } from "jdenticon";
 
-Identicon = ({ value, size }) => {
-  const svgString = jdenticon.toSvg(value, size);
+const Identicon = ({ value, size }) => {
+  const svgString = toSvg(value, size);
   return <div dangerouslySetInnerHTML={{ __html: svgString }} />;
 };
 
