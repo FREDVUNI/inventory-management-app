@@ -9,6 +9,7 @@ import { getUserProfile, updateProfile } from "../../services/index/users";
 import ProfilePicture from "../../components/ProfilePicture";
 import { userActions } from "../../store/reducers/userReducers";
 import { toast } from "react-hot-toast";
+import Identicon from "../../components/Identicon";
 
 const ProfilePage = () => {
   const navigate = useNavigate();
@@ -82,7 +83,11 @@ const ProfilePage = () => {
     <MainLayout>
       <section className="container mx-auto px-5 py-10">
         <div className="w-full max-w-sm mx-auto">
-          <ProfilePicture avatar={profileData?.photo} />
+          {profileData.photo ? (
+            <ProfilePicture avatar={profileData?.photo} />
+          ) : (
+            <Identicon value={profileData.name} />
+          )}
           <form onSubmit={handleSubmit(submitHandler)}>
             <div className="flex flex-col mb-6 w-full">
               <label
