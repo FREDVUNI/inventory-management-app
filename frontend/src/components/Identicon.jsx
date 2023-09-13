@@ -1,4 +1,5 @@
 import React from "react";
+import jdenticon from 'jdenticon';
 
 Identicon = ({ value, size }) => {
   const svgString = jdenticon.toSvg(value, size);
