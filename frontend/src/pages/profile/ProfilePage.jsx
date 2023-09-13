@@ -18,7 +18,6 @@ const ProfilePage = () => {
 
   // Extract the token from userState.userInfo
   const token = userState.userInfo ? userState.userInfo : "";
-
   const {
     data: profileData,
     isLoading: profileIsLoading,
