@@ -84,7 +84,7 @@ const ProfilePage = () => {
       <section className="container mx-auto px-5 py-10">
         <div className="w-full max-w-sm mx-auto">
           {profileData.photo ? (
-            <ProfilePicture avatar={profileData?.photo} />
+            <ProfilePicture avatar={profileData.photo} />
           ) : (
             <Identicon value={profileData.name} />
           )}
