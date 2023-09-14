@@ -85,7 +85,7 @@ const ProfilePage = () => {
           {profileData ? (
             <Identicon value={profileData.name} />
             ) : (
-              <ProfilePicture avatar={profileData.photo} />
+              <ProfilePicture avatar={profileData?.photo} />
               )}
           <form onSubmit={handleSubmit(submitHandler)}>
             <div className="flex flex-col mb-6 w-full">
