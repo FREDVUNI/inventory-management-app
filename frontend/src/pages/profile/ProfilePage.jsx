@@ -80,12 +80,16 @@ const ProfilePage = () => {
   };
   return (
     <MainLayout>
+      {
+        console.log(profileData)
+      }
       <section className="container mx-auto px-5 py-10">
         <div className="w-full max-w-sm mx-auto">
           {profileData ? (
             <Identicon value={profileData.name} />
             ) : (
-              <ProfilePicture avatar={profileData.photo} />
+              // <ProfilePicture avatar={profileData.photo} />
+              "goood"
               )}
           <form onSubmit={handleSubmit(submitHandler)}>
             <div className="flex flex-col mb-6 w-full">
