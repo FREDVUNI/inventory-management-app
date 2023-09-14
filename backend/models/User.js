@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema(
     photo: {
       type: String,
       required: [true, "Photo is required"],
-      default: "https://i.ibbco/4pDNDk1/avatar.png",
+      default: "https://robohash.org/default.png",
     },
     phone: {
       type: String,
