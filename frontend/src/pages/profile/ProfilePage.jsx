@@ -19,6 +19,7 @@ const ProfilePage = () => {
 
   // Extract the token from userState.userInfo
   const token = userState.userInfo ? userState.userInfo : "";
+  const identiconSize = 100;
   const {
     data: profileData,
     isLoading: profileIsLoading,
@@ -83,7 +84,7 @@ const ProfilePage = () => {
       <section className="container mx-auto px-5 py-10">
         <div className="w-full max-w-sm mx-auto">
           {profileData ? (
-            <Identicon value={profileData.name} />
+            <Identicon value={profileData.name} size={identiconSize}/>
             ) : (
               <ProfilePicture avatar={profileData?.photo} />
               )}
