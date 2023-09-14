@@ -85,9 +85,9 @@ const ProfilePage = () => {
         <div className="w-full max-w-sm mx-auto">
           {profileData ? (
             <ProfilePicture avatar={profileData?.photo} />
-            ) : (
-              <Identicon value={profileData.name} size={identiconSize}/>
-              )}
+          ) : (
+            <Identicon value={profileData.name} size={identiconSize} />
+          )}
           <form onSubmit={handleSubmit(submitHandler)}>
             <div className="flex flex-col mb-6 w-full">
               <label
