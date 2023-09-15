@@ -29,7 +29,7 @@ const Footer = () => {
               <Link to="/">Referral Program</Link>
             </li>
             <li>
-              <Link to="/">Pricing</Link>
+              <Link to="/pricing">Pricing</Link>
             </li>
           </ul>
         </div>
