@@ -37,7 +37,7 @@ const Footer = () => {
           <h3 className="text-dark-light font-bold md:text-lg">Services</h3>
           <ul className="text-[#959EAD] text-sm mt-5 space-y-4 md:text-base">
             <li>
-              <a href="/">Documentation</a>
+              <Link to="/">Documentation</Link>
             </li>
             <li>
               <a href="/">Design</a>
