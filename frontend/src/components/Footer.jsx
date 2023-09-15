@@ -105,19 +105,19 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <a href="/">
+              <Link to="/">
                 <AiFillInstagram className="w-6 h-auto" />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/">
+              <Link>
                 <FaFacebook className="w-6 h-auto" />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/">
+              <Link>
                 <BsTelegram className="w-6 h-auto" />
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
