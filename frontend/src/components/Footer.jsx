@@ -7,6 +7,7 @@ import {
 import { FaFacebook } from "react-icons/fa";
 import { BsTelegram } from "react-icons/bs";
 import { images } from "../constants";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
