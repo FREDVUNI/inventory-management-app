@@ -6,7 +6,6 @@ import {
 } from "react-icons/ai";
 import { FaFacebook } from "react-icons/fa";
 import { BsTelegram } from "react-icons/bs";
-
 import { images } from "../constants";
 
 const Footer = () => {
