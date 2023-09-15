@@ -17,19 +17,19 @@ const Footer = () => {
           <h3 className="text-dark-light font-bold md:text-lg">Product</h3>
           <ul className="text-[#959EAD] text-sm mt-5 space-y-4 md:text-base">
             <li>
-              <a href="/">Landing page</a>
+              <Link to="/">Landing page</Link>
             </li>
             <li>
-              <a href="/">Features</a>
+              <Link to="/">Features</Link>
             </li>
             <li>
-              <a href="/">Documentation</a>
+              <Link to="/">Documentation</Link>
             </li>
             <li>
-              <a href="/">Referral Program</a>
+              <Link to="/">Referral Program</Link>
             </li>
             <li>
-              <a href="/">Pricing</a>
+              <Link to="/">Pricing</Link>
             </li>
           </ul>
         </div>
