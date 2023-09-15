@@ -100,9 +100,9 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <a href="/">
+              <Link tp="/">
                 <AiFillYoutube className="w-6 h-auto" />
-              </a>
+              </Link>
             </li>
             <li>
               <a href="/">
