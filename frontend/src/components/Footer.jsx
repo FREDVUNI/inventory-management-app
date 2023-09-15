@@ -57,7 +57,7 @@ const Footer = () => {
           <h3 className="text-dark-light font-bold md:text-lg">Company</h3>
           <ul className="text-[#959EAD] text-sm mt-5 space-y-4 md:text-base">
             <li>
-              <a href="/">About</a>
+              <Link to="/">About</Link>
             </li>
             <li>
               <a href="/">Terms</a>
