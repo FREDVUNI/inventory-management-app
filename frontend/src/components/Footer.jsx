@@ -110,12 +110,12 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link>
+              <Link to="/">
                 <FaFacebook className="w-6 h-auto" />
               </Link>
             </li>
             <li>
-              <Link>
+              <Link to="/">
                 <BsTelegram className="w-6 h-auto" />
               </Link>
             </li>
