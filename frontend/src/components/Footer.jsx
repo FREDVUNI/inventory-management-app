@@ -77,10 +77,10 @@ const Footer = () => {
               <Link to="/">Documentation</Link>
             </li>
             <li>
-              <a href="/">License</a>
+              <Link to="/">License</Link>
             </li>
             <li>
-              <a href="/">Changelog</a>
+              <Link to="/">Changelog</Link>
             </li>
           </ul>
         </div>
