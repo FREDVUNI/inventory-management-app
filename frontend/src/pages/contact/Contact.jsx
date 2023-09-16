@@ -32,7 +32,7 @@ const ContactPage = () => {
               </li>
               <li className="flex items-center text-gray-600 mb-3">
                 <FiMail className="w-6 h-6 mr-2" />
-                <span>Email: info@example.com</span>
+                <span>Email: info@inventory.com</span>
               </li>
               <li className="flex items-center text-gray-600">
                 <FiMapPin className="w-6 h-6 mr-2" />
