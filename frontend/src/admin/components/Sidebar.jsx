@@ -34,7 +34,7 @@ const Sidebar = ({ isClosed }) => {
         <li>
           <Link to="/settings">
             <i className="bx bx-cog"></i>Settings
-          </a>
+          </Link>
         </li>
       </ul>
       <ul className="side-menu">
