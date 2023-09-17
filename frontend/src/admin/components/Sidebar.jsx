@@ -22,9 +22,9 @@ const Sidebar = ({ isClosed }) => {
           </Link>
         </li>
         <li>
-          <a href="/categories">
+          <Link to="/categories">
             <i className="bx bx-message-square-dots"></i>Categories
-          </a>
+          </Link>
         </li>
         <li>
           <a href="/users">
