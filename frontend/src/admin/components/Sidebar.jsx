@@ -15,18 +15,13 @@ const Sidebar = ({ isClosed }) => {
             <i className="bx bxs-dashboard"></i>Dashboard
           </a>
         </li>
-        <li>
-          <a href="/shop">
-            <i className="bx bx-store-alt"></i>Shop
-          </a>
-        </li>
         <li className="active">
-          <a href="/analytics">
+          <a href="/products">
             <i className="bx bx-analyse"></i>Products
           </a>
         </li>
         <li>
-          <a href="/tickets">
+          <a href="/categories">
             <i className="bx bx-message-square-dots"></i>Categories
           </a>
         </li>
