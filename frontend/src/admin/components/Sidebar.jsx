@@ -22,12 +22,12 @@ const Sidebar = ({ isClosed }) => {
         </li>
         <li className="active">
           <a href="/analytics">
-            <i className="bx bx-analyse"></i>Analytics
+            <i className="bx bx-analyse"></i>Products
           </a>
         </li>
         <li>
           <a href="/tickets">
-            <i className="bx bx-message-square-dots"></i>Tickets
+            <i className="bx bx-message-square-dots"></i>Categories
           </a>
         </li>
         <li>
