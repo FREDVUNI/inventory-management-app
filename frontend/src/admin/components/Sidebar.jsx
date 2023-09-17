@@ -1,14 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Sidebar = ({ isClosed }) => {
   return (
     <div className={`sidebar ${isClosed ? "close" : ""}`}>
-      <a href="/" className="logo">
+      <Link to="/" className="logo">
         <i className="bx bx-code-alt"></i>
         <div className="logo-name">
           <span>Inventory</span>
         </div>
-      </a>
+      </Link>
       <ul className="side-menu">
         <li>
           <a href="/">
