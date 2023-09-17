@@ -12,14 +12,14 @@ const Sidebar = ({ isClosed }) => {
       </Link>
       <ul className="side-menu">
         <li>
-          <a href="/">
+          <Link to="/">
             <i className="bx bxs-dashboard"></i>Dashboard
-          </a>
+          </Link>
         </li>
         <li className="active">
-          <a href="/products">
+          <Link to="/products">
             <i className="bx bx-analyse"></i>Products
-          </a>
+          </Link>
         </li>
         <li>
           <a href="/categories">
