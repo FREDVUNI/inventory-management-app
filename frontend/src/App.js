@@ -34,6 +34,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="*" element={<HomePage />} />
+        {/* admin routes */}
         <Route path="/dashboard" element={<Home />} />
       </Routes>
       <Toaster />
