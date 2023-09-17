@@ -39,10 +39,10 @@ const Sidebar = ({ isClosed }) => {
       </ul>
       <ul className="side-menu">
         <li>
-          <a href="/logout" className="logout">
+          <Link to="/logout" className="logout">
             <i className="bx bx-log-out-circle"></i>
             Logout
-          </a>
+          </Link>
         </li>
       </ul>
     </div>
