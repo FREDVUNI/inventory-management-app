@@ -29,7 +29,7 @@ const Navbar = ({
         <span className="count">12</span>
       </a>
       <a href="/profile" className="profile">
-        <img src="images/logo.png" alt="Profile" />
+        <img src="https://robohash.org/default.png" alt="Profile" />
       </a>
     </nav>
   );
