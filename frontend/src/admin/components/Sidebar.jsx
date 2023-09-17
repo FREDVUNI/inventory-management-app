@@ -27,12 +27,12 @@ const Sidebar = ({ isClosed }) => {
           </Link>
         </li>
         <li>
-          <a href="/users">
+          <Link to="/users">
             <i className="bx bx-group"></i>Users
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/settings">
+          <Link to="/settings">
             <i className="bx bx-cog"></i>Settings
           </a>
         </li>
