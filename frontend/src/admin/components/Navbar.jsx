@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const Navbar = ({
   onSidebarToggle,
   // onSearchToggle,
+  user,
   onDarkModeToggle,
   isSearchFormVisible,
 }) => {
