@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 const Home = () => {
   const userState = useSelector((state) => state.user);
-  console.log(userState);
+  // console.log(userState);
 
   const storedDarkMode = localStorage.getItem("darkMode") === "true";
   const [isSidebarClosed, setIsSidebarClosed] = useState(false);
