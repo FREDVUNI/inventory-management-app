@@ -44,7 +44,6 @@ const Home = () => {
           onSearchToggle={handleSearchToggle}
           isSearchFormVisible={isSearchFormVisible}
           onDarkModeToggle={handleDarkModeToggle}
-          user={userState.userInfo}
         />
         <MainContent isDarkMode={isDarkMode} />
       </div>
