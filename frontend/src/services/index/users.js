@@ -40,7 +40,6 @@ export const getUserProfile = async ({ token }) => {
       },
       mode:"cors",
     };
-
     const { data } = await axios.get("/api/users/profile", config);
     return data;
   } catch (error) {
