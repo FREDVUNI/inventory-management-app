@@ -69,8 +69,8 @@ const ProfilePage = () => {
       password: "",
     },
     values: {
-      name: profileIsLoading ? "" : profileData.name,
-      email: profileIsLoading ? "" : profileData.email,
+      name: profileIsLoading ? "" : profileData?.name,
+      email: profileIsLoading ? "" : profileData?.email,
     },
     mode: "onChange",
   });
@@ -79,6 +79,7 @@ const ProfilePage = () => {
     const { name, email, password } = data;
     mutate({ name, email, password });
   };
+
   return (
     <MainLayout>
       <section className="container mx-auto px-5 py-10">
@@ -86,7 +87,7 @@ const ProfilePage = () => {
           {profileData ? (
             <ProfilePicture avatar={profileData?.photo} />
           ) : (
-            <Identicon value={profileData.name} size={identiconSize} />
+            <Identicon value={userState.userInfo?.name} size={identiconSize} />
           )}
           <form onSubmit={handleSubmit(submitHandler)}>
             <div className="flex flex-col mb-6 w-full">
@@ -133,7 +134,7 @@ const ProfilePage = () => {
                 {...register("email", {
                   pattern: {
                     value:
-                      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zAZ]{2,}))$/,
                     message: "Enter a valid email",
                   },
                   required: {
