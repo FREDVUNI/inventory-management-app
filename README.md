@@ -1,7 +1,3 @@
-Here's an improved version of your README file:
-
----
-
 # Inventory Management App
 
 The Inventory Management App is a MERN (MongoDB, Express.js, React.js, Node.js) system designed for efficient inventory management. It includes features such as data validations using Joi, email verification for password reset, and cloudinary image upload for products.
@@ -62,5 +58,3 @@ Contributions to the Inventory Management App are welcome! To contribute, follow
    git push origin my-feature-branch
    ```
 5. Submit a pull request to the main repository.
-
---- 
