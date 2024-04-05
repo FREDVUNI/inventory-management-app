@@ -40,6 +40,14 @@ The Inventory Management App was built using the following technologies:
 - Express.js
 - MongoDB
 
+## screenshots
+
+### Landing
+![image](https://github.com/FREDVUNI/inventory-management-app/assets/41730664/c49bd2e7-52fb-4593-95ca-fcd81872917f)
+
+### Dashboard
+![image](https://github.com/FREDVUNI/inventory-management-app/assets/41730664/3b3c9682-e526-48a7-b0cb-0fc68262b0b0)
+
 ## Contributing
 
 Contributions to the Inventory Management App are welcome! To contribute, follow these steps:
