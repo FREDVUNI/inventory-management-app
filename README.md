@@ -33,7 +33,7 @@ To use the Inventory Management App, follow these steps:
    ```bash
    npm start
    ```
-   
+
 2. Open a web browser and navigate to [http://localhost:3000](http://localhost:3000).
 3. Create a new bootcamp by clicking on the "Add bootcamp" button and filling out the form.
 4. View, update, or delete bootcamps by clicking on the corresponding buttons.
