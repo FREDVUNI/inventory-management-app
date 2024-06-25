@@ -7,9 +7,11 @@ The Inventory Management App is a MERN (MongoDB, Express.js, React.js, Node.js) 
 To install the Inventory Management App, follow these steps:
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/FREDVUNI/inventory-management-app.git
    ```
+
 2. Navigate to the project directory:
    ```bash
    cd inventory-management-app
