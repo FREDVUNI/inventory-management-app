@@ -13,9 +13,11 @@ To install the Inventory Management App, follow these steps:
    ```
 
 2. Navigate to the project directory:
+
    ```bash
    cd inventory-management-app
    ```
+
 3. Install the dependencies:
    ```bash
    npm install
