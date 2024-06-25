@@ -50,6 +50,7 @@ The Inventory Management App was built using the following technologies:
 ## screenshots
 
 ### Landing
+
 ![image](https://github.com/FREDVUNI/inventory-management-app/assets/41730664/c49bd2e7-52fb-4593-95ca-fcd81872917f)
 
 ### Dashboard
