@@ -63,9 +63,11 @@ Contributions to the Inventory Management App are welcome! To contribute, follow
 
 1. Fork the repository: [https://github.com/FREDVUNI/inventory-management-app.git](https://github.com/FREDVUNI/inventory-management-app.git).
 2. Create a new branch for your changes:
+
    ```bash
    git checkout -b my-feature-branch
    ```
+
 3. Make your changes and commit them:
    ```bash
    git commit -m "Add my feature"
