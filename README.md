@@ -69,9 +69,11 @@ Contributions to the Inventory Management App are welcome! To contribute, follow
    ```
 
 3. Make your changes and commit them:
+
    ```bash
    git commit -m "Add my feature"
    ```
+
 4. Push your changes to your fork:
    ```bash
    git push origin my-feature-branch
